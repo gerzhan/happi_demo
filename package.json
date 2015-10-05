@@ -10,6 +10,7 @@
     "joi": "^6.9.0"
   },
   "devDependencies": {
+    "lab": "^6.1.0",
     "nodemon": "^1.7.1"
   },
   "scripts": {
