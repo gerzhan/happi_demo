@@ -22,3 +22,8 @@
     server.start(function () {
         console.log('Server running at:', server.info.uri);
     });
+
+## [Using plugins](http://hapijs.com/tutorials#using-plugins)
+
+    npm install --save good
+    npm install --save good-console
