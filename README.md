@@ -31,3 +31,5 @@
 ## [Validation](http://hapijs.com/tutorials/validation#validation)
 
     npm i joi -S   
+
+## [Creating a plugin](http://hapijs.com/tutorials/plugins#creating-a-plugin)
