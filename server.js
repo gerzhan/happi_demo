@@ -11,14 +11,6 @@ server.connection({
 
 server.route({
   method: 'GET',
-  path: '/hello',
-  handler: function(req, reply) {
-    reply('hello world');
-  }
-});
-
-server.route({
-  method: 'GET',
   path: '/hello/{name}',
   handler: function(req, reply) {
     reply("Hello " + encodeURIComponent(req.params.name) + "!")
@@ -32,7 +24,8 @@ server.route({
   }
 });
 
-server.register({
+server.register(
+  [{
     register: Good,
     options: {
       reporters: [{
@@ -41,10 +34,12 @@ server.register({
           response: '*',
           log: '*'
         }
-
       }]
     }
-  },
+  }, {
+    register: require('./plugins/hello'),
+    options: {}
+  }],
   function(err) {
     if (err) {
       throw err;
