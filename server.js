@@ -1,5 +1,6 @@
 var Hapi = require('hapi');
-var Good = require('good')
+var Good = require('good');
+var Joi = require('joi');
 var server = new Hapi.Server();
 
 
@@ -21,6 +22,13 @@ server.route({
   path: '/hello/{name}',
   handler: function(req, reply) {
     reply("Hello " + encodeURIComponent(req.params.name) + "!")
+  },
+  config: {
+    validate: {
+      params: {
+        name: Joi.string().min(3).max(10)
+      }
+    }
   }
 });
 

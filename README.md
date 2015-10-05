@@ -27,3 +27,7 @@
 
     npm install --save good
     npm install --save good-console
+
+## [Validation](http://hapijs.com/tutorials/validation#validation)
+
+    npm i joi -S   
