@@ -6,9 +6,12 @@
   "dependencies": {
     "hapi": "^10.3.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.7.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon start server.js"
   },
   "author": "Nikolay Gerzhan <nikolay.gerzhan@gmail.com>",
   "license": "ISC"
