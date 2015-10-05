@@ -14,6 +14,14 @@ server.route({
   }
 });
 
+server.route({
+  method: 'GET',
+  path: '/hello/{name}',
+  handler: function(req, reply) {
+    reply("Hello " + encodeURIComponent(req.params.name) + "!")
+  }
+});
+
 server.start(function() {
   console.log('Server running at:', server.info.uri);
 })
