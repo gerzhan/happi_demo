@@ -1,7 +1,7 @@
 {
   "name": "hapi_demo",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.0.2",
+  "description": "HAPI server",
   "main": "server.js",
   "dependencies": {
     "good": "^6.4.0",
