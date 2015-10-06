@@ -1,4 +1,13 @@
 # HAPI demo
+## Start 
+
+    npm start 
+
+## Run tests
+
+    npm test
+
+## Simple server 
 
     var Hapi = require('hapi');
 
