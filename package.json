@@ -10,11 +10,12 @@
     "joi": "^6.9.0"
   },
   "devDependencies": {
+    "code": "^1.5.0",
     "lab": "^6.1.0",
     "nodemon": "^1.7.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node ./node_modules/lab/bin/lab -c",
     "start": "nodemon start server.js"
   },
   "author": "Nikolay Gerzhan <nikolay.gerzhan@gmail.com>",
