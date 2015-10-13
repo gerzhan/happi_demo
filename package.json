@@ -16,7 +16,7 @@
   },
   "scripts": {
     "test": "node ./node_modules/lab/bin/lab -c",
-    "start": "nodemon start server.js"
+    "start": "nodemon server.js"
   },
   "author": "Nikolay Gerzhan <nikolay.gerzhan@gmail.com>",
   "license": "ISC"
