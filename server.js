@@ -1,6 +1,8 @@
 var Hapi = require('hapi');
 var Good = require('good');
 var Joi = require('joi');
+var Inert = require('inert');
+var Vision = require('vision');
 var server = new Hapi.Server();
 
 
@@ -24,22 +26,24 @@ server.route({
   }
 });
 
-server.register(
-  [{
-    register: Good,
-    options: {
-      reporters: [{
-        reporter: require('good-console'),
-        events: {
-          response: '*',
-          log: '*'
-        }
-      }]
+server.register([
+    Inert,
+    Vision, {
+      register: Good,
+      options: {
+        reporters: [{
+          reporter: require('good-console'),
+          events: {
+            response: '*',
+            log: '*'
+          }
+        }]
+      }
+    }, {
+      register: require('./plugins/hello'),
+      options: {}
     }
-  }, {
-    register: require('./plugins/hello'),
-    options: {}
-  }],
+  ],
   function(err) {
     if (err) {
       throw err;
