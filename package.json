@@ -4,6 +4,7 @@
   "description": "HAPI server",
   "main": "server.js",
   "dependencies": {
+    "blipp": "^2.3.0",
     "good": "^6.4.0",
     "good-console": "^5.1.0",
     "handlebars": "^4.0.3",
