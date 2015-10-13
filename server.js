@@ -1,5 +1,6 @@
 var Hapi = require('hapi');
 var Good = require('good');
+var Blipp = require('blipp');
 var Joi = require('joi');
 var Inert = require('inert');
 var Vision = require('vision');
@@ -38,7 +39,8 @@ server.route({
 
 server.register([
     Inert,
-    Vision, {
+    Vision,
+    Blipp, {
       register: Good,
       options: {
         reporters: [{
