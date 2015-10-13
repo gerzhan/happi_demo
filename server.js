@@ -13,6 +13,16 @@ server.connection({
 
 server.route({
   method: 'GET',
+  path: '/',
+  handler: function(req, reply) {
+    reply.view('index', {
+      title: "Hapi Demo"
+    });
+  }
+});
+
+server.route({
+  method: 'GET',
   path: '/hello/{name}',
   handler: function(req, reply) {
     reply("Hello " + encodeURIComponent(req.params.name) + "!")
@@ -55,5 +65,13 @@ server.register([
     }
   }
 );
+// add templates support with handlebars
+server.views({
+  path: 'templates',
+  engines: {
+    html: require('handlebars')
+  },
+  isCached: false
+});
 
 module.exports = server;
