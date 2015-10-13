@@ -29,6 +29,8 @@ server.route({
     reply("Hello " + encodeURIComponent(req.params.name) + "!")
   },
   config: {
+    tags: ['api'],
+    notes: ['See personal hello message'],
     validate: {
       params: {
         name: Joi.string().min(3).max(10)
@@ -41,6 +43,19 @@ server.register([
     Inert,
     Vision,
     Blipp, {
+      register: require('hapi-swagger'),
+      options: {
+        apiVersion: "0.0.1",
+        basePath: server.info.uri,
+        info: {
+          title: 'HAPI Demo ',
+          description: 'This web API was built to demonstrate some of the hapi features and functionality.',
+          contact: 'nikolay.gerzhan@gmail.com',
+          license: 'MIT',
+          licenseUrl: '/license'
+        }
+      }
+    }, {
       register: Good,
       options: {
         reporters: [{
